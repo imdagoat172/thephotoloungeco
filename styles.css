@@ -447,6 +447,21 @@ textarea:focus {
   text-align: center;
 }
 
+.contact-email {
+  margin-top: 0.35rem;
+}
+
+.contact-email a {
+  display: inline-block;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.contact-email a:hover,
+.contact-email a:focus-visible {
+  color: var(--gold);
+}
+
 .site-footer {
   padding: 3rem 0 2rem;
   border-top: 1px solid var(--border);
