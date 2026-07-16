@@ -62,7 +62,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#booking">Book Now</a>
-            <a class="btn btn-secondary" href="mailto:info@thephotolounge.net">✉️ info@thephotolounge.net</a>
+            <a class="btn btn-secondary" href="mailto:atlphotolounge@gmail.com">✉️ atlphotolounge@gmail.com</a>
             <a class="btn btn-secondary" href="tel:4044996355">Call (404) 499-6355</a>
             <a class="btn btn-ghost" href="https://www.instagram.com/the_photolounge_co/" target="_blank" rel="noreferrer">View Instagram</a>
           </div>
@@ -254,44 +254,126 @@
             <h2>Let’s plan an unforgettable experience.</h2>
             <p>Share your event details and we will help create a photo booth experience that feels seamless, stylish, and memorable.</p>
           </div>
-          <form class="booking-form reveal" aria-label="Booking form" action="mailto:info@thephotolounge.net" method="post" enctype="text/plain">
-            <div class="field-row">
-              <label>
-                Full Name
-                <input type="text" name="name" placeholder="Jordan Williams" required />
+          <form class="booking-form reveal" aria-label="Booking form" action="mailto:atlphotolounge@gmail.com" method="post" enctype="text/plain" novalidate>
+            <p class="form-step-indicator" aria-live="polite">Step <span class="current-step">1</span> of 3</p>
+
+            <section class="form-step is-active" data-step="1" aria-hidden="false">
+              <label for="booth-placement">
+                Will the Photo Booth be inside or outside?
+                <select id="booth-placement" name="boothPlacement" required aria-required="true" aria-describedby="booth-placement-error">
+                  <option value="">Select one</option>
+                  <option value="Inside">Inside</option>
+                  <option value="Outside">Outside</option>
+                </select>
               </label>
-              <label>
-                Email
-                <input type="email" name="email" placeholder="you@example.com" required />
+              <p class="field-error" id="booth-placement-error" aria-live="polite"></p>
+              <label for="type">
+                Event Type
+                <input id="type" type="text" name="type" placeholder="Wedding, Birthday, Corporate, etc." required aria-required="true" aria-describedby="type-error" />
               </label>
-            </div>
-            <div class="field-row">
-              <label>
-                Phone Number
-                <input type="tel" name="phone" placeholder="(404) 499-6355" required />
+              <p class="field-error" id="type-error" aria-live="polite"></p>
+              <label for="guests">
+                Estimated Guest Count
+                <input id="guests" type="number" name="guests" min="1" placeholder="120" required aria-required="true" aria-describedby="guests-error" />
               </label>
-              <label>
-                Event Date
-                <input type="date" name="date" required />
+              <p class="field-error" id="guests-error" aria-live="polite"></p>
+              <label for="theme">
+                Theme or Color Scheme of Event
+                <input id="theme" type="text" name="theme" placeholder="Ex. Black &amp; Gold, Rustic, Modern White" aria-describedby="theme-error" />
               </label>
-            </div>
-            <label>
-              Event Location
-              <input type="text" name="location" placeholder="Atlanta, GA" required />
-            </label>
-            <label>
-              Event Type
-              <input type="text" name="type" placeholder="Wedding, Birthday, Corporate, etc." required />
-            </label>
-            <label>
-              Estimated Guest Count
-              <input type="number" name="guests" min="1" placeholder="120" required />
-            </label>
-            <label>
-              Additional Details
-              <textarea name="details" rows="5" placeholder="Tell us about your vision, theme, or special requests."></textarea>
-            </label>
-            <button class="btn btn-primary" type="submit">Submit</button>
+              <p class="field-error" id="theme-error" aria-live="polite"></p>
+              <label for="referral-source">
+                How did you hear about us?
+                <select id="referral-source" name="referralSource" aria-describedby="referral-source-error">
+                  <option value="">Select one</option>
+                  <option value="Google">Google</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="TikTok">TikTok</option>
+                  <option value="Referral">Referral</option>
+                  <option value="Returning Customer">Returning Customer</option>
+                  <option value="Wedding Planner">Wedding Planner</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+              <p class="field-error" id="referral-source-error" aria-live="polite"></p>
+              <div class="step-controls">
+                <button class="btn btn-primary btn-step" type="button" data-next-step="2" aria-label="Go to part 2 of booking form">Next &rarr;</button>
+              </div>
+            </section>
+
+            <section class="form-step" data-step="2" aria-hidden="true">
+              <div class="field-row">
+                <label for="name">
+                  Full Name
+                  <input id="name" type="text" name="name" placeholder="Jordan Williams" required aria-required="true" aria-describedby="name-error" />
+                </label>
+                <p class="field-error" id="name-error" aria-live="polite"></p>
+                <label for="email">
+                  Email
+                  <input id="email" type="email" name="email" placeholder="you@example.com" required aria-required="true" aria-describedby="email-error" />
+                </label>
+                <p class="field-error" id="email-error" aria-live="polite"></p>
+              </div>
+              <div class="field-row">
+                <label for="phone">
+                  Phone Number
+                  <input id="phone" type="tel" name="phone" placeholder="(404) 499-6355" required aria-required="true" aria-describedby="phone-error" />
+                </label>
+                <p class="field-error" id="phone-error" aria-live="polite"></p>
+                <label for="date">
+                  Event Date
+                  <input id="date" type="date" name="date" required aria-required="true" aria-describedby="date-error" />
+                </label>
+                <p class="field-error" id="date-error" aria-live="polite"></p>
+              </div>
+              <label for="venue">
+                Event Location and Venue Name
+                <input id="venue" type="text" name="venue" placeholder="Ex. Atlanta Marriott Marquis" required aria-required="true" aria-describedby="venue-error" />
+              </label>
+              <p class="field-error" id="venue-error" aria-live="polite"></p>
+              <label for="duration">
+                How long will you need us for?
+                <select id="duration" name="duration" required aria-required="true" aria-describedby="duration-error duration-note">
+                  <option value="">Select duration</option>
+                  <option value="2 Hours">2 Hours</option>
+                  <option value="3 Hours">3 Hours</option>
+                  <option value="4 Hours">4 Hours</option>
+                  <option value="5 Hours">5 Hours</option>
+                  <option value="6+ Hours">6+ Hours</option>
+                </select>
+              </label>
+              <p class="field-note" id="duration-note">Don't worry-you can adjust this later.</p>
+              <p class="field-error" id="duration-error" aria-live="polite"></p>
+              <div class="field-row">
+                <label for="start-time">
+                  Booth Start Time
+                  <input id="start-time" type="time" name="startTime" required aria-required="true" aria-describedby="start-time-error" />
+                </label>
+                <p class="field-error" id="start-time-error" aria-live="polite"></p>
+                <label for="end-time">
+                  Booth End Time
+                  <input id="end-time" type="time" name="endTime" required aria-required="true" aria-describedby="end-time-error" />
+                </label>
+                <p class="field-error" id="end-time-error" aria-live="polite"></p>
+              </div>
+              <div class="step-controls">
+                <button class="btn btn-secondary btn-step" type="button" data-prev-step="1" aria-label="Go back to part 1 of booking form">&larr; Back</button>
+                <button class="btn btn-primary btn-step" type="button" data-next-step="3" aria-label="Go to part 3 of booking form">Next &rarr;</button>
+              </div>
+            </section>
+
+            <section class="form-step" data-step="3" aria-hidden="true">
+              <label for="details">
+                Anything else we should know about your event?
+                <textarea id="details" name="details" rows="5" placeholder="Tell us about your event, special requests, setup notes, etc." aria-describedby="details-error"></textarea>
+              </label>
+              <p class="field-error" id="details-error" aria-live="polite"></p>
+              <div class="step-controls">
+                <button class="btn btn-secondary btn-step" type="button" data-prev-step="2" aria-label="Go back to part 2 of booking form">&larr; Back</button>
+                <button class="btn btn-primary btn-continue" type="submit">Continue</button>
+              </div>
+            </section>
           </form>
         </div>
       </section>
@@ -301,7 +383,7 @@
           <p class="eyebrow">Contact</p>
           <h2>The Photo Lounge Co.</h2>
           <p><a href="tel:4044996355">📞 (404) 499-6355</a></p>
-          <p class="contact-email"><a href="mailto:info@thephotolounge.net">✉️ info@thephotolounge.net</a></p>
+          <p class="contact-email"><a href="mailto:atlphotolounge@gmail.com">✉️ atlphotolounge@gmail.com</a></p>
           <p>📍 Serving Georgia and surrounding areas</p>
           <p><a href="https://www.instagram.com/the_photolounge_co/" target="_blank" rel="noreferrer">Instagram: @the_photolounge_co</a></p>
         </div>
